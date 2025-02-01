@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="homepage">
+    <h1>Welcome to Multimodal AI</h1>
+    <p>Choose a model to get started:</p>
+    <div class="model-showcase">
+        <div class="card" data-model="text_model">
+            <h2>Text Model</h2>
+            <p>Generate and analyze text using AI.</p>
+            <button onclick="loadModel('text_model')">Open Model</button>
+        </div>
+        <div class="card" data-model="image_model">
+            <h2>Image Model</h2>
+            <p>Classify and understand images with AI.</p>
+            <button onclick="loadModel('image_model')">Open Model</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

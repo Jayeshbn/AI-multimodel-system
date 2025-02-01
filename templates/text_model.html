@@ -1,0 +1,18 @@
+<h1>Text Model</h1>
+<div class="model-container">
+    <textarea id="prompt" placeholder="Enter your text prompt"></textarea>
+    <button id="generate-text">Generate Text</button>
+    <p id="result"></p>
+</div>
+<script>
+    document.getElementById('generate-text').addEventListener('click', async () => {
+        const prompt = document.getElementById('prompt').value;
+        const response = await fetch('/text_model', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt })
+        });
+        const data = await response.json();
+        document.getElementById('result').textContent = data.result;
+    });
+</script>

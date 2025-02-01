@@ -1,0 +1,13 @@
+multimodal_ai/
+├── app.py                # Main Flask app
+├── static/
+│   ├── style.css         # CSS for styling
+│   ├── script.js         # JavaScript for AJAX
+├── templates/
+│   ├── base.html         # Base layout with sidebar
+│   ├── index.html        # Main interface
+│   ├── text_model.html   # Text model content only
+│   ├── image_model.html  # Image model content only
+└── models/
+    ├── text_model.py     # Text generation logic
+    ├── image_model.py    # Image classification logic

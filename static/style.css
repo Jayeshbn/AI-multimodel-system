@@ -1,0 +1,183 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: white; /* Main background set to white */
+    color: black; /* Text color set to black */
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background: #f5f5f5; /* Light grey background for the sidebar */
+    color: black; /* Black text color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    height: 100%;
+}
+
+.sidebar h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: black; /* Black text color for heading */
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin: 1rem 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: black; /* Black text color for links */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background: #e0e0e0; /* Slightly darker grey on hover */
+    color: black; /* Keep text color black on hover */
+}
+
+.sidebar nav ul li a.active {
+    background: #b0b0b0; /* Active link background with medium grey */
+    color: black; /* Black text for active link */
+}
+
+/* Main Content Styles */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    position: relative;
+}
+
+.main-content.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Homepage Styles */
+.homepage {
+    text-align: center;
+    color: black; /* Text color set to black */
+}
+
+.homepage h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.homepage p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: black; /* Text color set to black */
+}
+
+.model-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.card {
+    background: white; /* Card background set to white */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 280px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    position: relative; /* Make the card relative for absolute positioning of the button */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    color: black; /* Card heading text color set to black */
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: black; /* Card paragraph text color set to black */
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allow content to take up remaining space in the card */
+}
+
+.card button {
+    background-color: white; /* Button background set to blue */
+    color: rgba(40, 39, 39, 0.553); /* Button text color set to white */
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Position the button at the bottom */
+    bottom: 0.5rem; /* Place it at the bottom of the card */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+}
+
+.card button:hover {
+    background-color: lightgray;
+    color: black; /* Button hover color set to dark blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px; /* Reduce sidebar width for small screens */
+    }
+
+    .sidebar h2 {
+        font-size: 1rem; /* Reduce heading size */
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+}

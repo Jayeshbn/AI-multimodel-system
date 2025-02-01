@@ -1,0 +1,22 @@
+<h2>Image Model</h2>
+<p>Upload an image for processing:</p>
+<form id="imageForm">
+    <input type="file" id="imageInput" accept="image/*" required>
+    <button type="submit">Process</button>
+</form>
+<div id="response"></div>
+
+<script>
+    document.getElementById('imageForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const responseDiv = document.getElementById('response');
+        responseDiv.textContent = 'Processing image...';
+        const response = await fetch('/api/image', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ image_data: 'mock_image_data' }), // Replace with actual image data
+        });
+        const data = await response.json();
+        responseDiv.textContent = data.response || data.error;
+    });
+</script>
